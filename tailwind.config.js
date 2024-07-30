@@ -6,7 +6,12 @@ import aspectRatio from '@tailwindcss/aspect-ratio'
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {}
+    extend: {
+      spacing: {
+        '90vh': '90vh',
+        '40vh': '40vh',
+      }
+    }
   },
   plugins: [typography, forms, aspectRatio]
 }
