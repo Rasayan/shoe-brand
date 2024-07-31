@@ -4,7 +4,7 @@ import HelloView from './views/HomeView.vue'
 </script>
 
 <template>
-  <HelloView />
+  <router-view/>
 </template>
 
 <style scoped>

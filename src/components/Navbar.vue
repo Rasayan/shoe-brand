@@ -1,42 +1,98 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+import 'primeicons/primeicons.css';
+import navoptions from './navoptions.vue';
 
-<script>
-import 'primeicons/primeicons.css'
+const isMenuOpen = ref(false);
+const isScrolled = ref(false);
+const isSearchBarVisible = ref(false);
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 0;
+};
+
+const toggleSearchBar = () => {
+  isSearchBarVisible.value = !isSearchBarVisible.value;
+  if (isSearchBarVisible.value) {
+    setTimeout(() => {
+      document.addEventListener('click', closeSearchBar);
+    }, 0);
+  }
+};
+
+const closeSearchBar = (event) => {
+  if (!event.target.closest('.search-container')) {
+    isSearchBarVisible.value = false;
+    document.removeEventListener('click', closeSearchBar);
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+  document.removeEventListener('click', closeSearchBar);
+});
 </script>
 
 <template>
-  <nav
-    class="w-8/12 h-fit flex justify-between items-center border-b-2 border-black py-3 fixed top-0 bg-zinc-50/50 backdrop-blur-md px-6 z-50"
+  <navoptions
+    :class="[
+      'fixed top-0 left-0 h-full bg-white border-r transform transition-transform duration-500 ease-in-out z-40',
+      isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+    ]"
+  />
+  <div
+    class="w-screen h-fit flex justify-center items-center fixed top-0 z-50 transition-colors duration-300"
+    :class="{ 'bg-transparent': !isScrolled, 'bg-white': isScrolled }"
   >
-    <button
-      class="relative px-6 flex rounded-2xl justify-center items-center hover:bg-zinc-200 hover:rounded-2xl duration-200"
-    >
-      <span class="text-2xl">&#9776;</span>
-      MENU
-    </button>
-
-    <!-- <div class="text-black text-3xl font-bold">RR</div> -->
-    <img src="/public/logo2light.png" alt="" class="w-16 h-12" />
-
-    <!-- <div class="w-fit h-fit relative flex justify-center gap-16">
-      <a href="#" class="text-black text-lg font-medium">Home</a>
-      <a href="#" class="text-black text-lg font-medium">Collection</a>
-      <a href="#" class="text-black text-lg font-medium">About Us</a>
-      <a href="#" class="text-black text-lg font-medium">Contact Us</a>
-      <a href="#" class="text-black text-lg font-medium">FAQs</a>
-      <a href="#" class="text-black text-lg font-medium">Log In</a>
-    </div> -->
-
-    <div class="w-fit h-fit relative flex justify-center gap-4">
-      <a href="#" class="border border-zinc-900 px-2 py-1 rounded-md"
-        ><i class="pi pi-shopping-cart" style="color: slateblue"></i
-      ></a>
-      <a href="#" class="border border-zinc-900 px-1 py-1 rounded-md text-black"
-        ><i class="pi pi-heart" style="color: slateblue"></i
-      ></a>
-      <a href="#" class="border border-zinc-900 px-1 py-1 rounded-md"
-        ><i class="pi pi-search" style="color: slateblue"></i
-      ></a>
-    </div>
-  </nav>
+    <nav class="w-full md:w-10/12 lg:w-8/12 h-fit flex justify-between items-center py-2 md:py-3 px-4 md:px-6">
+      <img src="/public/logo2light.png" alt="" class="w-12 h-8 md:w-16 md:h-12" />
+      <div class="w-fit h-fit relative flex justify-center gap-2 md:gap-4">
+        <a href="#" class="px-1 md:px-2 py-1 rounded-md text-lg md:text-xl text-black">
+          <i class="pi pi-shopping-cart"></i>
+        </a>
+        <a href="#" class="px-1 py-1 rounded-md text-lg md:text-xl text-black">
+          <i class="pi pi-heart"></i>
+        </a>
+        <div class="relative flex items-center search-container">
+          <a
+            @click.stop="toggleSearchBar"
+            href="#"
+            class="px-1 py-1 rounded-md text-lg md:text-xl text-black transition-opacity duration-300 ease-in-out"
+            :class="{ 'opacity-0': isSearchBarVisible }"
+          >
+            <i class="pi pi-search"></i>
+          </a>
+          <input
+            type="text"
+            placeholder="Search..."
+            class="absolute right-0 px-2 py-1 rounded-md text-sm md:text-base border border-gray-300 focus:outline-none focus:border-blue-500 transition-all duration-300 ease-in-out"
+            :class="{ 'w-0 opacity-0': !isSearchBarVisible, 'w-32 md:w-48 opacity-100': isSearchBarVisible }"
+            @click.stop
+          />
+        </div>
+        <button
+          @click="toggleMenu"
+          class="relative px-2 md:px-6 flex rounded-2xl justify-center items-center gap-1 md:gap-2 duration-200 text-xs md:text-base"
+        >
+          <i class="pi pi-list"></i>
+          <span class="hidden md:inline">MENU</span>
+        </button>
+      </div>
+    </nav>
+  </div>
 </template>
+
+<style scoped>
+.opacity-0 {
+  pointer-events: none;
+}
+</style>

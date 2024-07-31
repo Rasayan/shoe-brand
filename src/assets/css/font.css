@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Valkey';
+    src: url('../fonts/OTF/Valky.otf') format('opentype'),
+         url('../fonts/TTF/ValkyRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

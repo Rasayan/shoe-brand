@@ -1,29 +1,23 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="w-full h-screen flex flex-col justify-center items-center">
-    <div class="w-full h-4/5 flex justify-around items-center">
-      <div class="w-1/2 h-full flex flex-col justify-center items-start gap-4 px-52 box-border">
-        <h2 class="text-9xl tracking-widest font-serif">NEW SEASON</h2>
-        <p class="text-4xl font-serif">STARTING AT $299.00</p>
+  <div class="w-full h-screen flex flex-col md:flex-row justify-around items-center bg-[#e2dbd6]">
+    
+    <!-- Side div for desktop view -->
+    <div class="hidden md:block w-1/5 h-40vh">
+      <p class="text-xl text-zinc-600">Chic, modern and creative the typeface DUO will allow you to create stunning layouts.</p>
+    </div>
 
-        <a href="#" class="border-2 border-black py-2 px-8 my-10">SHOP NOW</a>
-      </div>
+    <!-- Center div -->
+    <div class="w-4/5 md:w-1/3 h-60vh md:h-90vh border border-zinc-500/50 rounded-full relative flex flex-col justify-center md:justify-end items-center mt-8 md:mt-0 p-4 md:p-6">
+      <h2 class="text-white text-4xl md:text-[6em] font-semibold font-valkey my-0 relative top-2 md:top-1">Rare</h2>
+      <h1 class=" text-6xl md:text-[13em] font-semibold font-valkey my-0 tracking-widest text-[#b49076]">Royals</h1>
+    </div>
 
-      <div class="flex flex-col justify-center items-center gap-4 w-1/2 h-full">
-        <div class="w-8/12 flex justify-end items-center">
-          <img src="/public/3.1.png" alt="shoe1" class="rotate-12 scale-150" />
-        </div>
-        <div class="w-8/12 flex justify-start items-center">
-          <img
-            src="/public/3.2.png"
-            alt="shoe1"
-            class="scale-150 -rotate-12 hover:-rotate-6 duration-200"
-          />
-        </div>
-        <div class="w-8/12 flex justify-end items-center">
-          <img src="/public/3.3.png" alt="shoe1" class="rotate-12 scale-150" />
-        </div>
-      </div>
+    <!-- Side div for desktop view -->
+    <div class="hidden md:block w-1/5 h-40vh flex flex-col justify-end items-end">
+      <p class="text-xl text-zinc-600">Lookbook</p>
+      <p class="text-xl text-zinc-600">Rare Royals</p>
+      <p class="text-xl text-zinc-600">2024</p>
     </div>
   </div>
 </template>
