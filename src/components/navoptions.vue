@@ -4,7 +4,7 @@
     <div 
     class="w-4/5 md:w-2/5 h-screen flex justify-end items-center bg-zinc-50/50 backdrop-blur-md px-8">
         <div class="w-1/2 h-fit bg-transparent flex flex-col justify-center items-end gap-5">
-            <a href="#" 
+            <a href="/" 
             class="text-xl text-zinc-700 font-medium hover:tracking-widest duration-200"
             >
                 Home
@@ -23,17 +23,17 @@
                     <a href="#" class="text-xl text-zinc-700 font-medium hover:tracking-widest duration-200">Kida shoes & apparels</a>
                     <a href="#" class="text-xl text-zinc-700 font-medium hover:tracking-widest duration-200">Women's clothing</a>
             </div>
-            <a href="#" 
+            <a href="/about" 
             class="text-xl text-zinc-700 font-medium hover:tracking-widest duration-200"
             >
                 About Us
             </a>
-            <a href="#" 
+            <a href="/contact" 
             class="text-xl text-zinc-700 font-medium hover:tracking-widest duration-200"
             >
                 Contact
             </a>
-            <a href="#" 
+            <a href="/privacy" 
             class="text-xl text-zinc-700 font-medium hover:tracking-widest duration-200"
             >
                 FAQs

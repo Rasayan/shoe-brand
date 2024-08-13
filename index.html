@@ -5,9 +5,55 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>rareroyals</title>
+
+    <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   </head>
   <body class="w-screen h-screen m-0 p-0">
-    <div id="app" class="w-screen h-fit bg-hero-pattern bg-no-repeat bg-cover bg-att bg-fixed"></div>
+    <div id="app" class="w-screen h-fit"></div>
     <script type="module" src="/src/main.js"></script>
+
+    <script type="module">
+      import { createApp } from 'vue'
+      import App from './src/App.vue'
+      import router from './src/router/index.js'
+
+      const app = createApp(App)
+
+      app.mixin({
+        methods: {
+          updateBackground() {
+            const appDiv = document.getElementById('app')
+            if (this.$route.path === '/') {
+              appDiv.classList.add(
+                'bg-hero-pattern',
+                'bg-no-repeat',
+                'bg-cover',
+                'bg-att',
+                'bg-fixed'
+              )
+            } else {
+              appDiv.classList.remove(
+                'bg-hero-pattern',
+                'bg-no-repeat',
+                'bg-cover',
+                'bg-att',
+                'bg-fixed'
+              )
+            }
+          }
+        },
+        watch: {
+          $route() {
+            this.updateBackground()
+          }
+        },
+        created() {
+          this.updateBackground()
+        }
+      })
+
+      app.use(router).mount('#app')
+    </script>
   </body>
 </html>
