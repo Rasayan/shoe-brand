@@ -11,9 +11,9 @@
       </div>
 
       <div class="wi-full h-8% flex flex-col justify-center items-center my-4">
-        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">Shoes</h5>
+        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">category-1</h5>
 
-        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">$56.00</p>
+        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">20-Items</p>
       </div>
     </div>
 
@@ -25,9 +25,9 @@
       </div>
 
       <div class="wi-full h-8% flex flex-col justify-center items-center my-4">
-        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">Shoes</h5>
+        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">category-2</h5>
 
-        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">$56.00</p>
+        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">30-Items</p>
       </div>
     </div>
 
@@ -39,9 +39,9 @@
       </div>
 
       <div class="wi-full h-8% flex flex-col justify-center items-center my-4">
-        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">Shoes</h5>
+        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">category-3</h5>
 
-        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">$56.00</p>
+        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">25-Items</p>
       </div>
     </div>
 
@@ -53,9 +53,9 @@
       </div>
 
       <div class="wi-full h-8% flex flex-col justify-center items-center my-4">
-        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">Shoes</h5>
+        <h5 class="text-2xl font-semibold text-zinc-700 dark:text-zinc-100">category-4</h5>
 
-        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">$56.00</p>
+        <p id="price" class="text-xl text-zinc-500 tracking-wider dark:text-zinc-100">50-Items</p>
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@
     <div
       class="w-[45%] h-4/5 rounded-2xl bg-homecateg2 flex justify-center items-center flex-col gap-4"
     >
-      <h2 class="font-valkey text-white text-8xl">Hello</h2>
+      <h2 class="font-valkey text-white text-8xl">GOLD SOLE</h2>
       <p class="text-xl text-white font-medium font-serif tracking-wider">
         Hello I am fint, what about you?
       </p>

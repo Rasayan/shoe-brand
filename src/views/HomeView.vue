@@ -10,7 +10,6 @@ import Home3_5 from '@/components/home3_5.vue'
 import Hom3_6 from '@/components/hom3_6.vue'
 import Home5 from '@/components/home5.vue'
 import Home6 from '@/components/home6.vue'
-import Home7 from '@/components/home7.vue'
 </script>
 
 <template>
@@ -26,7 +25,6 @@ import Home7 from '@/components/home7.vue'
 
     <Home6 />
     <Home5 />
-    <!-- <Home7 /> -->
 
     <Footer />
   </main>
